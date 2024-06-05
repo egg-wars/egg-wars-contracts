@@ -1,15 +1,16 @@
 ## Egg Wars
 
-### Review scope
+Live at https://eggwars.xyz
 
-Please review all the files in `./src/`, as well as the deploy script in `./script` along with the release plan detailed below
+```
+WARNING: This is an unaudited barnyard experimental game. It has been reviewed but not officially audited. Use at your own risk.
+This is a game for fun, not for financial gain or speculation! There are no plans for future development.
+```
 
-This is a game created from a hackathon and being released on a L2 (Base). Not looking for minor gas improvements, but interested in any possible exploits or unintended behavior.
+### Deployments
 
-Acknowledged issues:
-
-- I know ERC721Enumerable is gas heavy but it makes it easier for the frontend to work without an indexer
-- I know that the owner() of Chicken.sol has powerful authority, but we expect to renounce this after a few days of gameplay
+EggToken: https://basescan.org/address/0xD20f3D9229FA77898D69524526fA590DAbdFf701
+Chicken: https://basescan.org/address/0x3Ecb4A5c42671379f7b287431dB9002A17EE7018
 
 ### Functionality
 
@@ -24,29 +25,3 @@ Players have four actions that they can take:
 3. **They can throw their eggs at other players’ chickens.** For each egg thrown at a chicken, its level decreases by 1. A chicken’s level can never go below 1. Each egg that is thrown is burned.
 
 4. **They can attempt to hatch a chicken from an egg.** The likelihood of success with hatching is 10%. If the hatching succeeds, the player receives a new ERC-721 of a chicken that starts at level 1. Whether the hatching succeeds or fails, the egg is burned.
-
-The original 150 players contributed 0.015 ETH each, for a total of 2.25 ETH. This ETH could be used to start a liquidity pool on Uniswap with 60,000 eggs. Existing players can buy or sell eggs to support their game strategy. New players can buy eggs to attempt to hatch new chickens and join the game.
-
-### Deploying
-
-Set up `.env` (cp `.env.sample .env`)
-
-Run `./deploy/deploy_testnet.sh` or `./deploy/deploy_base.sh`
-
-Run `yarn generate_sponsor` and paste in the Chicken smart contract address
-
-Call `setSponsorWallet` with the output
-
-Send ETH to Sponsor Wallet address
-
-### Base release plan
-
-- [ ] Pass proposal to send ETH to deployer address
-- [ ] Deploy EggToken & Chicken contracts via Deployment plan above
-- [ ] Airdrop 1 chicken to st3ve.eth
-- [ ] Have st3ve.eth test `attemptHatch`
-- [ ] Consider proposing that Party LPs the EGG token with the ETH in the party
-- [ ] Call `Chicken.airdrop()`, have params include 1 chicken for every party membership (https://basescan.org/token/0x8138f468D235fFA0C6B32ae70aA799555a91ee74#balances)
-- [ ] Call `Chicken.closeAirdrop()` to disable any more chickens being produced
-- [ ] Change owner of Chicken to the party address (`0x8138f468D235fFA0C6B32ae70aA799555a91ee74`)
-- [ ] After a few days of gameplay, have prty renounce ownership of Chicken contract
