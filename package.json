@@ -1,0 +1,16 @@
+{
+  "name": "chicken-wars",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "generate_sponsor": "ts-node ./ts/generate_sponsor_wallet.ts",
+    "coverage": "forge coverage --report lcov && genhtml lcov.info --branch-coverage --output-dir coverage"
+  },
+  "dependencies": {
+    "@api3/airnode-admin": "^0.12.0",
+    "solc": "^0.8.20",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
