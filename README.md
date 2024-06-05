@@ -1,7 +1,5 @@
 ## Egg Wars
 
-Live at https://eggwars.xyz
-
 ```
 WARNING: This is an unaudited barnyard experimental game. It has been reviewed but not officially audited. Use at your own risk.
 This is a game for fun, not for financial gain or speculation! There are no plans for future development.
@@ -9,7 +7,10 @@ This is a game for fun, not for financial gain or speculation! There are no plan
 
 ### Deployments
 
+Live at https://eggwars.xyz
+
 EggToken: https://basescan.org/address/0xD20f3D9229FA77898D69524526fA590DAbdFf701
+
 Chicken: https://basescan.org/address/0x3Ecb4A5c42671379f7b287431dB9002A17EE7018
 
 ### Functionality
